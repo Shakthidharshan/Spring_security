@@ -1,4 +1,4 @@
-package com.shakthi.Springsecurity;
+package com.shakthi.Springsecurity.controller;
 
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;

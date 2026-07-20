@@ -1,5 +1,6 @@
-package com.shakthi.Springsecurity;
+package com.shakthi.Springsecurity.controller;
 
+import com.shakthi.Springsecurity.Model.Student;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,11 +15,14 @@ import java.util.List;
 public class Studentcontroller {
         private List<Student> students = new ArrayList<>(List.of(
                 new Student(1,"shakthi",30),
-                new Student(2,"gokul",50)));
+                new Student(2,"gokul",50),
+                new Student(3,"praveen",65)));
+
         @GetMapping("/students")
         public List<Student> getStudens(){
                 return  students;
         }
+
         @PostMapping("/students")
         public Student addstudents(@RequestBody Student student){
             students.add(student);
