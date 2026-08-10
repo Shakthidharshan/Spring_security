@@ -1,4 +1,4 @@
-package com.shakthi.Springsecurity;
+package com.shakthi.Springsecurity.controller;
 
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -10,8 +10,6 @@ public class Controller {
 
     @GetMapping("/")
     public  String greet(HttpServletRequest request){
-        System.out.println("welcome to home page");
-        System.out.println("this a java project");
         return "welcome to home page " + request.getSession().getId();
 
     }

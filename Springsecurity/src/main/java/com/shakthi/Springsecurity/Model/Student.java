@@ -1,4 +1,4 @@
-package com.shakthi.Springsecurity;
+package com.shakthi.Springsecurity.Model;
 
 public class Student {
     private  int id;
