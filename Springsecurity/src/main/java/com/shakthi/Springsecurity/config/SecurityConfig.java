@@ -27,8 +27,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class SecurityConfig {
     @Autowired
     private MyUserDetailsService myUserDetailsService;
-//    @Autowired
-//    private JwtFilter jwtFilter;
+    @Autowired
+    private JwtFilter jwtFilter;
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http)throws Exception {
         return http.csrf(Customizer -> Customizer.disable())
@@ -38,7 +38,7 @@ public class SecurityConfig {
                         .anyRequest().authenticated())
                 .httpBasic(Customizer.withDefaults())
                 .sessionManagement(session ->session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-               // .addFilterBefore(jwtFilter , UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(jwtFilter , UsernamePasswordAuthenticationFilter.class)
                 .build();
     }
 //    @Bean
